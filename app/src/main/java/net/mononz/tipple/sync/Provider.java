@@ -78,6 +78,11 @@ public class Provider extends ContentProvider {
                         " LEFT JOIN " + product_image.TABLE_NAME + " ON " + product.main_image + " = " + product_image.FULL_ID);
                 retCursor = ORDER_PRODUCTS.query(mOpenHelper.getReadableDatabase(), projection, selection, selectionArgs, null, null, sortOrder);
                 break;
+            case PRODUCT:
+                SQLiteQueryBuilder PRODUCT = new SQLiteQueryBuilder();
+                PRODUCT.setTables(product.TABLE_NAME);
+                retCursor = PRODUCT.query(mOpenHelper.getReadableDatabase(), projection, selection, selectionArgs, null, null, sortOrder);
+                break;
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
         }

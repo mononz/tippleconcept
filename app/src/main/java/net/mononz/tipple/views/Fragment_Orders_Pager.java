@@ -1,26 +1,33 @@
 package net.mononz.tipple.views;
  
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager; 
 import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader; 
+import android.support.v4.content.Loader;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager; 
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View; 
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import net.mononz.tipple.R;
 import net.mononz.tipple.adapters.AdapterOrders;
+import net.mononz.tipple.sync.database.order_details;
 import net.mononz.tipple.sync.database.order_products;
 import net.mononz.tipple.sync.database.product;
 import net.mononz.tipple.sync.database.product_image;
 
-import butterknife.BindView; 
+import java.util.ArrayList;
+
+import butterknife.BindView;
 import butterknife.ButterKnife; 
  
 public class Fragment_Orders_Pager extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
@@ -57,6 +64,28 @@ public class Fragment_Orders_Pager extends Fragment implements LoaderManager.Loa
                 getActivity().getContentResolver().update(order_products.CONTENT_URI, values,
                         order_products.fk_order_id + "=? AND " + order_products.fk_product_id + "=?",
                         new String[]{Integer.toString(order_id), Long.toString(product_id)});
+            }
+
+            @Override
+            public void extraInfo(long product_id) {
+                Cursor c = getActivity().getContentResolver().query(product.CONTENT_URI, null, null, null, null);
+                if (c != null) {
+                    if (c.moveToFirst()) {
+                        int idx_name = c.getColumnIndex(product.name);
+                        int idx_barcode = c.getColumnIndex(product.barcode);
+                        new AlertDialog.Builder(getActivity())
+                                .setTitle(c.getString(idx_name))
+                                .setMessage("Barcode: " + c.getString(idx_barcode))
+                                .setPositiveButton(getString(R.string.info), new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Toast.makeText(getActivity(), getString(R.string.coming_soon), Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .show();
+                    }
+                    c.close();
+                }
             }
         });
 

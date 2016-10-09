@@ -65,7 +65,7 @@ public class ActivityMain extends AppCompatActivity {
     private void alertWhereTo() {
         Cursor c = getContentResolver().query(order_details.CONTENT_URI,
                 new String[]{ order_details.TABLE_NAME + ".*"},
-                null, null, null);
+                null, null, order_details.FULL_ID + " ASC");
         if (c != null) {
             if (c.moveToFirst()) {
                 ArrayList<String> addresses = new ArrayList<>();

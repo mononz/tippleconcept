@@ -70,6 +70,13 @@ public class AdapterOrders extends CursorRecAdapter<AdapterOrders.ShowViewHolder
                 mCallback.tickProduct(order_id, _id, (added == 1) ? 0 : 1);
             }
         });
+        viewHolder.vView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                mCallback.extraInfo(order_id);
+                return false;
+            }
+        });
     }
 
     @Override
@@ -95,6 +102,7 @@ public class AdapterOrders extends CursorRecAdapter<AdapterOrders.ShowViewHolder
 
     public interface Callback {
         void tickProduct(int order_id, long product_id, int tick);
+        void extraInfo(long product_id);
     }
 
 }

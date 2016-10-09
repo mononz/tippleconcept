@@ -44,7 +44,7 @@ public class Tipple extends Application {
 
         ANALYTICS_KEY = getString(R.string.analytics_tracking);
         analytics = GoogleAnalytics.getInstance(this);
-        FirebaseAnalytics.getInstance(this);
+        //FirebaseAnalytics.getInstance(this);
 
         getSession(this);
 

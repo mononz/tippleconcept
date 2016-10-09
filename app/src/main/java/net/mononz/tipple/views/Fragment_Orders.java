@@ -41,17 +41,16 @@ public class Fragment_Orders extends Fragment {
             titles = new ArrayList<>();
 
             Cursor cursor = getActivity().getContentResolver().query(order_details.CONTENT_URI,
-                    new String[]{order_details.FULL_ID, order_details.postcode, order_details.suburb},
+                    new String[]{order_details.FULL_ID, order_details.suburb},
                     null, null, order_details.FULL_ID + " ASC");  // order_details by id as most likely will be due first
 
             if (cursor != null) {
                 cursor.moveToFirst();
                 do {
                     int idx_id = cursor.getColumnIndex(order_details._id);
-                    int postcode = cursor.getColumnIndex(order_details.postcode);
                     int suburb = cursor.getColumnIndex(order_details.suburb);
                     ids.add(cursor.getInt(idx_id));
-                    titles.add(cursor.getString(suburb) + ", " + cursor.getString(postcode));
+                    titles.add("#" + cursor.getString(idx_id) + ", " + cursor.getString(suburb));
                 } while (cursor.moveToNext());
                 cursor.close();
             }
