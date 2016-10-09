@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "465847779685",
+    "firebase_url": "https://paragon-1291.firebaseio.com",
+    "project_id": "paragon-1291",
+    "storage_bucket": "paragon-1291.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465847779685:android:85e13a7ed5291014",
+        "android_client_info": {
+          "package_name": "net.mononz.tipple"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465847779685-igulto7fpge5htnjhfukktsm0ss3mcuh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.mononz.tipple",
+            "certificate_hash": "E05D1640C711509B75D92B38090BEA81BFFF95C8"
+          }
+        },
+        {
+          "client_id": "465847779685-c8t8s9ag9lrjgjhho8aij6lrljveo4sv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.mononz.tipple",
+            "certificate_hash": "6676FB9FFD45D857CAD436060FE5D2301A585DF1"
+          }
+        },
+        {
+          "client_id": "465847779685-knmm01o7gc6ikdv6nu1311v3kqfr644v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgpXDiAQUF7EyccyDIUWhykOnFRaBg2Xw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "465847779685-knmm01o7gc6ikdv6nu1311v3kqfr644v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

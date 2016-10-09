@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="sync_database">Checking for new data</string>
+
+    <string name="next_order">Next order</string>
+    <string name="continue_order">Continue order</string>
+
+    <string name="alert_title">Delivery Instructions</string>
+    <string name="close">Close</string>
+
+</resources>

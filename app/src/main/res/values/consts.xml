@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="network_time_out">30</integer>
+
+    <string name="analytics_tracking" translatable="false">UA-66651130-10</string>
+
+    <string name="app_name" translatable="false">Tipple Rider Concept</string>
+    <string name="content_authority" translatable="false">net.mononz.tipple</string>
+    <string name="sync_account_type" translatable="false">tipple.mononz.net</string>
+
+</resources>

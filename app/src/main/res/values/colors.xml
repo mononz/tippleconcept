@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimaryDark">#5D5C4A</color>
+    <color name="colorPrimary">#878674</color>
+    <color name="colorPrimaryLight">#ACAB9C</color>
+    <color name="colorAccent">#BAA159</color>
+
+    <color name="primary_text">#FFFFFF</color>
+    <color name="secondary_text">#d4d4d4</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#7cb6b6b6</color>
+
+    <color name="scrim_card">#91242424</color>
+
+    <color name="scrim_start">#b8242424</color>
+    <color name="scrim_center">#37000000</color>
+    <color name="scrim_end">#00000000</color>
+
+</resources>
